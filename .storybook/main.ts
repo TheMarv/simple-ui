@@ -1,6 +1,8 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
+import path from 'path';
+
 const config: StorybookConfig = {
-  stories: ['../stories/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -18,6 +20,14 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: 'tag',
+  },
+  webpackFinal: async (config, options) => {
+    config.resolve = config.resolve || {};
+    config.resolve.modules = [
+      ...(config.resolve.modules || []),
+      path.resolve(__dirname, '..', 'src')
+    ];
+    return config;
   },
 };
 export default config;
