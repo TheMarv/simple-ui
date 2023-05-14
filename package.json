@@ -14,7 +14,7 @@
     "start": "tsdx watch",
     "build": "tsdx build --config tsdx.config.js",
     "test": "jest --config ./jest.config.ts --passWithNoTests",
-    "lint": "tsdx lint",
+    "lint": "tsdx lint --fix",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "storybook dev -p 6006",
