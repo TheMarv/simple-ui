@@ -19,7 +19,7 @@
     "analyze": "size-limit --why",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "postinstall": "npm run build"
+    "postinstall": "npm install && npm run build"
   },
   "peerDependencies": {
     "react": ">=16"
