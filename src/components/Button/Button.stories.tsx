@@ -15,5 +15,5 @@ export const _Button: Story = {
     color: 'Primary',
     size: 'M',
   },
-  render: args => <Button {...args}>Button</Button>,
+  render: (args) => <Button {...args}>Button</Button>,
 };
